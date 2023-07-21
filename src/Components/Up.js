@@ -1,11 +1,11 @@
 import UpAddOn from "./UpAddOn";
 
-export default function Up() {
+export default function Up({ summaryName,toggleSwitch, setTogggleSwitch }) {
   return (
     <div className="summary">
       <div className="summary-title">
         <div>
-          <h2>X(Y)</h2>
+          <h3>{summaryName}({toggleSwitch ? "Monthly" : "Yearly"})</h3>
           <p>Change</p>
         </div>
         <p>$9/mo</p>

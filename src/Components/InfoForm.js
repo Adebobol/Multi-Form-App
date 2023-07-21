@@ -1,18 +1,24 @@
+import { useState } from "react";
 import Form from "./Form";
 import Heading from "./Heading";
 
 export default function InfoForm() {
+  const [name, setName] = useState("")
+  function save(e) {
+    e.preventDefault()
+  }
   return (
     <div>
       <Heading
         first="Personal info"
         second="Please provide your name, email address, and phone number."
       />
-      <form>
+      <form onSubmit={(e) => save(e)}>
         <Form
           labelName="Name"
           inputType="text"
           inputPlaceholder="eg. Adepoju Adebobola"
+          value={name}
         />
 
         <Form
