@@ -1,6 +1,11 @@
-
-
-export default function Form({ name,labelName, inputType, inputPlaceholder }) {
+export default function Form({
+  key,
+  name,
+  labelName,
+  inputType,
+  inputPlaceholder,
+  send,
+}) {
   return (
     <div className="form">
       <label>{labelName}</label>
@@ -8,7 +13,7 @@ export default function Form({ name,labelName, inputType, inputPlaceholder }) {
         type={inputType}
         value={name}
         placeholder={inputPlaceholder}
-        onChange={(e) => e.target.value}
+        onChange={(e) => send(e.target.value)}
       />
     </div>
   );

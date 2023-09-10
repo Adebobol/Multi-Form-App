@@ -1,7 +1,17 @@
 import Heading from "./Heading";
 import AddOns from "./AddOns";
 
-export default function AddOnsForm() {
+export default function AddOnsForm({
+  setAddOnSummary,
+  onlineChecked,
+  checkOnline,
+  storageChecked,
+  checkStorage,
+  profileChecked,
+  checkProfile,
+  handleSummary,
+  toggleSwitch,
+}) {
   return (
     <div>
       <Heading
@@ -11,18 +21,33 @@ export default function AddOnsForm() {
       <div className="addOn-list">
         <AddOns
           addOnName="Online service"
-          addOnPrice="+$1/mo"
-          addOnSummary="Access to multiplayer games."
+          addOnPrice={1}
+          summary="Access to multiplayer games."
+          setAddOnSummary={setAddOnSummary}
+          checked={onlineChecked}
+          tick={checkOnline}
+          handleSummary={handleSummary}
+          toggleSwitch={toggleSwitch}
         />
         <AddOns
           addOnName="Larger storage"
-          addOnPrice="+$2/mo"
-          addOnSummary="Extra 1TB of cloud save."
+          addOnPrice={2}
+          summary="Extra 1TB of cloud save."
+          setAddOnSummary={setAddOnSummary}
+          checked={storageChecked}
+          tick={checkStorage}
+          handleSummary={handleSummary}
+          toggleSwitch={toggleSwitch}
         />
         <AddOns
           addOnName="Customizable profile"
-          addOnPrice="+$2/mo"
-          addOnSummary="Custom theme on your profile."
+          addOnPrice={2}
+          summary="Custom theme on your profile."
+          setAddOnSummary={setAddOnSummary}
+          checked={profileChecked}
+          tick={checkProfile}
+          handleSummary={handleSummary}
+          toggleSwitch={toggleSwitch}
         />
       </div>
     </div>

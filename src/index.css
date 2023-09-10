@@ -11,7 +11,7 @@ body {
 }
 
 .main {
-  background-color: hsl(231, 100%, 99%);
+  background-color: white;
   display: grid;
   grid-template: 1fr / 1fr 2fr;
   height: 570px;
@@ -60,10 +60,9 @@ body {
   margin-top: 30px;
 }
 
-
-label,input {
+label,
+input {
   display: block;
-
 }
 
 input[type="text"],
@@ -94,7 +93,7 @@ input[type="number"] {
 }
 
 .active {
-  background-color: hsl(206, 94%, 87%);
+  background-color: hsl(228, 100%, 84%);
   color: hsl(213, 96%, 18%);
 }
 
@@ -127,7 +126,8 @@ input[type="number"] {
 }
 
 .selected-package {
-  background-color: hsl(229, 24%, 87%);
+  background-color: hsl(231, 100%, 99%);
+  border: 1px solid hsl(213, 96%, 18%);
 }
 
 .selected-package2 {

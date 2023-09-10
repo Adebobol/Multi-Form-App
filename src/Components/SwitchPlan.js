@@ -1,15 +1,15 @@
-export default function SwitchPlan({ onSetSwitch }) {
-  function swi() {
-    // e.preventDefault()
-    onSetSwitch((sitch) => !sitch);
-  }
+export default function SwitchPlan({ onSetSwitch, onSwitch }) {
   return (
     <div className="my-switch">
-      {/* // <div> */}
       <h3>Monthly</h3>
 
       <label className="switch">
-        <input className="sli" type="checkbox" onChange={() => swi()} />
+        <input
+          className="sli"
+          checked={onSwitch}
+          type="checkbox"
+          onChange={(e) => onSetSwitch(!onSwitch)}
+        />
         <span className="slider round"></span>
       </label>
       <h3>yearly</h3>

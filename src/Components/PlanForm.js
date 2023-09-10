@@ -19,7 +19,7 @@ export default function PlanForm({
         <Plan
           image="./assets/images/icon-arcade.svg"
           packageName="Arcade"
-          packagePrice="$9/"
+          packagePrice={9}
           freePackage="2 months free"
           onSwitch={onSwitch}
           num={0}
@@ -30,7 +30,7 @@ export default function PlanForm({
         <Plan
           image="./assets/images/icon-advanced.svg"
           packageName="Advanced"
-          packagePrice="$12/"
+          packagePrice={12}
           freePackage="2 months free"
           onSwitch={onSwitch}
           num={1}
@@ -41,7 +41,7 @@ export default function PlanForm({
         <Plan
           image="./assets/images/icon-pro.svg"
           packageName="Pro"
-          packagePrice="$15/"
+          packagePrice={15}
           freePackage="2 months free"
           onSwitch={onSwitch}
           num={2}
@@ -50,7 +50,7 @@ export default function PlanForm({
           onChang={onChang}
         />
       </div>
-      <SwitchPlan onSetSwitch={onSetSwitch} />
+      <SwitchPlan onSetSwitch={onSetSwitch} onSwitch={onSwitch} />
     </div>
   );
 }

@@ -1,23 +1,36 @@
-import { useState } from "react";
 export default function AddOns({
   addOnName,
   addOnPrice,
-  addOnSummary
+  summary,
+  checked,
+  tick,
+  handleSummary,
+  toggleSwitch,
 }) {
-  const [addOn, setAddOn] = useState(false);
+  function createSummary() {
+    tick(!checked);
+    const newSummary = { addOnName, addOnPrice };
+    handleSummary(newSummary);
+    console.log(addOnPrice);
+  }
+
   return (
     <div
       className="addOn"
-      style={addOn ? { backgroundColor: "hsl(228, 100%, 84%)" } : {}}
+      style={checked ? { backgroundColor: "hsl(228, 100%, 84%)" } : {}}
     >
       <div className="addOn-inner">
-        <input type="checkbox" onChange={()=>setAddOn()} />
+        <input type="checkbox" checked={checked} onChange={createSummary} />
+
         <div>
           <h3>{addOnName}</h3>
-          <p>{addOnSummary}</p>
+          <p>{summary}</p>
         </div>
       </div>
-      <p>{addOnPrice}</p>
+      <p>
+        {`+${addOnPrice}/`}
+        {toggleSwitch ? "yr" : "mo"}
+      </p>
     </div>
   );
 }
